@@ -1,0 +1,63 @@
+function [y1, y2, y3] = fcn(x1,x2,x3)
+x1=int16(x1);
+x2=int16(x2);
+x3=int16(x3);
+
+a= min([x1 x2 x3]);
+if(x1==x2 && x2==x3)
+    y1=0;
+    y2=0;
+    y3=0;
+elseif(x1==a)
+    if( x2<x3)
+        y1=0;
+        y2=0;
+        y3=1;
+    elseif(x2>x3)
+        y1=0;
+        y2=1;
+        y3=0;
+    else
+        y1= 0;
+        y2 = 1;
+        y3 = 0;
+    end
+
+elseif(x2==a)
+    if( x1<x3)
+        y1=0;
+        y2=0;
+        y3=1;
+    elseif(x1>x3)
+        y1=1;
+        y2=0;
+        y3=0;
+    else
+        y1=0;
+        y2 = 0;
+        y3 = 1;
+    end
+  
+elseif(x3==a)
+    if( x1<x2)
+        y1=0;
+        y2=1;
+        y3=0;
+    elseif(x1>x2)
+        y1=1;
+        y2=0;
+        y3=0;
+    else
+        y1 = 1;
+        y2 = 0;
+        y3 = 0;
+    end
+else
+    y1=0;
+    y2=0;
+    y3=0;
+end
+end
+    
+
+
